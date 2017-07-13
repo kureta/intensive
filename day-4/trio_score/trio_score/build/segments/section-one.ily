@@ -11,100 +11,91 @@
                     {
                         \time 4/4
                         {
-                            g16 [
-                            c'16
-                            cs'16
-                            e'8 ]
-                            r8.
-                            g16 [
-                            af16
-                            d'8 ]
-                            r8
-                            ef'16
+                            c'16 [
+                            d'16
+                            c'8
+                            d'8. ]
                             r16
+                            c'4
+                            d'16 [
+                            c'16
+                            d'8 ~ ]
                         }
                     }
                     {
                         \time 3/4
                         {
-                            r8
-                            c'16 [
-                            ef'16
+                            d'16 [
                             c'16
-                            ef'8 ]
-                            r8.
-                            g16 [
-                            c'16 ]
+                            d'8
+                            c'8. ]
+                            r16
+                            d'4
                         }
                     }
                     {
                         \time 5/4
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 20/21 {
-                            cs'8
-                            r8
-                            e'16
-                            r8.
-                            g16 [
-                            af16
-                            d'16
-                            ef'8 ]
-                            r8.
                             c'16 [
-                            ef'16
-                            c'8 ]
+                            d'16
+                            c'8
+                            d'16
+                            c'16
+                            d'8
+                            c'8. ]
                             r16
+                            d'4
+                            c'16 [
+                            d'16
+                            c'8
+                            d'16 ~ ]
                         }
                     }
                     {
                         \time 4/4
                         {
+                            d'16 [
+                            c'8
+                            d'8. ]
                             r16
-                            ef'16
-                            r8.
-                            g16 [
+                            c'4
+                            d'16 [
                             c'16
-                            cs'16
-                            e'8 ]
-                            r8.
-                            g16 [
-                            af16
-                            d'16 ~ ]
+                            d'8
+                            c'16 ]
                         }
                     }
                     {
                         \time 3/4
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 12/13 {
-                            d'16
-                            r8
-                            ef'16
-                            r8.
-                            c'16 [
-                            ef'16
-                            c'16
-                            ef'8 ]
+                            d'16 [
+                            c'8
+                            d'8. ]
                             r16
+                            c'4
+                            d'16 [
+                            c'16 ~ ]
                         }
                     }
                     {
                         \time 5/4
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 10/11 {
-                            r8
-                            g16 [
-                            c'16
-                            cs'8 ]
-                            r8
-                            e'16
-                            r8.
-                            g16 [
-                            af16
+                            c'8 [
                             d'16
-                            ef'8 ]
-                            r8.
+                            c'16
+                            d'8
+                            c'8. ]
+                            r16
+                            d'4
                             c'16 [
-                            ef'16 ]
+                            d'16
+                            c'8
+                            d'16
+                            c'16
+                            d'8 ]
                             \bar "||"
                         }
                     }
@@ -120,90 +111,62 @@
                 \context Voice = "Viola Voice" {
                     {
                         \time 4/4
-                        \times 8/9 {
-                            c'8 [
-                            cs'16
-                            e'16
-                            g8
-                            af8. ]
-                            r16
-                            d'4
-                            ef'16 [
-                            c'16
-                            ef'8 ~ ]
-                        }
-                    }
-                    {
-                        \time 3/4
                         {
-                            ef'16 [
-                            c'16
-                            ef'8
-                            g8. ]
-                            r16
                             c'4
-                        }
-                    }
-                    {
-                        \time 5/4
-                        {
-                            cs'16 [
-                            e'16
-                            g8
-                            af16
-                            d'16
-                            ef'8
-                            c'8. ]
-                            r16
-                            ef'4
-                            c'16 [
-                            ef'16
-                            g8 ~ ]
-                        }
-                    }
-                    {
-                        \time 4/4
-                        \times 16/17 {
-                            g16 [
-                            c'16
-                            cs'8
-                            e'8. ]
-                            r16
-                            g4
-                            af16 [
-                            d'16
-                            ef'8
-                            c'16 ]
+                            d'4
+                            c'4
+                            d'4 ~
                         }
                     }
                     {
                         \time 3/4
-                        {
-                            ef'16 [
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            d'8 [
                             c'8
-                            ef'8. ]
-                            r16
-                            g4
-                            c'16 ~
+                            d'8
+                            c'8
+                            d'8
+                            c'8
+                            d'8 ~ ]
                         }
                     }
                     {
                         \time 5/4
                         \tweak text #tuplet-number::calc-fraction-text
-                        \times 20/21 {
-                            c'16 [
-                            cs'8
-                            e'16
-                            g16
-                            af8
-                            d'8. ]
-                            r16
-                            ef'4
-                            c'16 [
-                            ef'16
+                        \times 5/4 {
+                            d'2
+                            c'2 ~
+                        }
+                    }
+                    {
+                        \time 4/4
+                        \times 4/5 {
+                            c'4
+                            d'4
+                            c'4
+                            d'4
+                            c'4 ~
+                        }
+                    }
+                    {
+                        \time 3/4
+                        {
+                            c'8 [
+                            d'8
                             c'8
-                            ef'16
-                            g16 ]
+                            d'8
+                            c'8
+                            d'8 ~ ]
+                        }
+                    }
+                    {
+                        \time 5/4
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            d'2
+                            c'2
+                            d'2
                             \bar "||"
                         }
                     }
@@ -219,64 +182,30 @@
                 \context Voice = "Cello Voice" {
                     {
                         \time 4/4
-                        {
-                            g,4
-                            c4
-                            cs4
-                            e4 ~
-                        }
+                        c'1 ~
                     }
                     {
                         \time 3/4
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \times 6/7 {
-                            e8 [
-                            g,8
-                            af,8
-                            d8
-                            ef8
-                            c8
-                            ef8 ~ ]
-                        }
+                        c'2.
                     }
                     {
                         \time 5/4
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \times 5/4 {
-                            ef2
-                            c2 ~
-                        }
+                        d'1 ~
+                        d'4 ~
                     }
                     {
                         \time 4/4
-                        \times 4/5 {
-                            c4
-                            ef4
-                            g,4
-                            c4
-                            cs4 ~
-                        }
+                        d'1
                     }
                     {
                         \time 3/4
-                        {
-                            cs8 [
-                            e8
-                            g,8
-                            af,8
-                            d8
-                            ef8 ~ ]
-                        }
+                        ef'2. ~
                     }
                     {
                         \time 5/4
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \times 5/6 {
-                            ef2
-                            c2
-                            ef2
-                            \bar "||"
-                        }
+                        ef'1 ~
+                        ef'4
+                        \bar "||"
                     }
                 }
             }

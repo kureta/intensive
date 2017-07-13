@@ -11,5 +11,11 @@
         d4
         c4
     }
+    \context Staff = "Staff Three" { 
+        c'1
+    } 
+    \context Staff = "Staff Four" {
+        c''1
+    }
 >>
 
