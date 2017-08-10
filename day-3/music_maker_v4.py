@@ -3,10 +3,17 @@ import abjad
 
 class MusicMaker(object):
 
-    def __init__(self, counts, denominator, pitches):
+    def __init__(
+        self,
+        counts,
+        denominator,
+        pitches,
+        clef='treble',
+        ):
         self.counts = counts
         self.denominator = denominator
         self.pitches = pitches
+        self.clef = abjad.Clef(clef)
 
     def make_basic_rhythm(self, time_signature_pairs, counts, denominator):
         # THIS IS HOW WE MAKE THE BASIC RHYTHM
@@ -66,6 +73,8 @@ class MusicMaker(object):
                 abjad.attach(abjad.Hairpin('p < f'), run)
             else:
                 abjad.attach(abjad.Dynamic('ppp'), run[0])
+        first_leaf = next(abjad.iterate(music).by_leaf())
+        abjad.attach(self.clef, first_leaf)
         return music
 
 
@@ -81,20 +90,61 @@ class MusicMaker(object):
         return music
 
 
-fast_music_maker = MusicMaker([1, 1, 1, 1, 1, -1], 32, [0, 1])
-slow_music_maker = MusicMaker([3, 4, 5, -1], 4, ["b,", "bf,", "gf,"])
-stuttering_music_maker = MusicMaker([1, 1, -7], 16, [23]) 
+fast_music_maker = MusicMaker(
+    counts=[1, 1, 1, 1, 1, -1],
+    denominator=16,
+    pitches=[0, 1],
+    )
+slow_music_maker = MusicMaker(
+    counts=[3, 4, 5, -1],
+    denominator=4,
+    pitches=["b,", "bf,", "gf,"],
+    clef='bass',
+    )
+stuttering_music_maker = MusicMaker(
+    counts=[1, 1, -7],
+    denominator=16,
+    pitches=[23],
+    ) 
+sparkling_music_maker = MusicMaker(
+    counts=[1, -5, 1, -9, 1, -5],
+    denominator=16,
+    pitches=[38, 39, 40],
+    clef='treble^8',
+    )
 
 upper_staff = abjad.Staff()
 lower_staff = abjad.Staff()
 time_signature_pairs = [(3, 4), (5, 16), (3, 8), (4, 4)]
 
-for music_maker in (fast_music_maker, slow_music_maker, stuttering_music_maker):
+for music_maker in (
+    fast_music_maker,
+    slow_music_maker,
+    stuttering_music_maker,
+    sparkling_music_maker,
+    ):
     music = music_maker.make_music(time_signature_pairs)
     upper_staff.append(music)
 
-for music_maker in (slow_music_maker, stuttering_music_maker, fast_music_maker):
+for music_maker in (
+    slow_music_maker,
+    slow_music_maker,
+    stuttering_music_maker,
+    fast_music_maker,
+    ):
     music = music_maker.make_music(time_signature_pairs)
     lower_staff.append(music)
 
-score = abjad.Score([upper_staff, lower_staff])
+
+piano_staff = abjad.StaffGroup(
+    [upper_staff, lower_staff],
+    context_name='PianoStaff',
+    )
+
+score = abjad.Score([piano_staff])
+score.add_final_bar_line()
+lilypond_file = abjad.LilyPondFile.new(score)
+lilypond_file.header_block.composer = 'Abjad Summer Course'
+title_markup = abjad.Markup("L'ÉTUDE CCRMA").bold().fontsize(8)
+lilypond_file.header_block.title = title_markup
+lilypond_file.header_block.subtitle = 'This is the Subtitle'
