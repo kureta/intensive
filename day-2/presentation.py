@@ -6,7 +6,7 @@ def make_sketch_lilypond_file(component):
         voice.remove_commands.append('Forbid_line_break_engraver')
     override(component).bar_line.stencil = False
     override(component).bar_number.stencil = False
-    override(component).beam.positions = schemetools.SchemePair(4, 4)
+    override(component).beam.positions = schemetools.SchemePair((4, 4))
     override(component).spacing_spanner.strict_grace_spacing = True
     override(component).spacing_spanner.strict_note_spacing = True
     override(component).spacing_spanner.uniform_stretching = True
@@ -22,10 +22,10 @@ def make_sketch_lilypond_file(component):
     override(component).tuplet_bracket.staff_padding = 2.25
     override(component).tuplet_number.text = \
         schemetools.Scheme('tuplet-number::calc-fraction-text', verbatim=True)
-    set_(component).proportional_notation_duration = \
-        schemetools.SchemeMoment(1, 24)
-    set_(component).tuplet_full_length = True
-    lilypond_file = lilypondfiletools.make_basic_lilypond_file(component)
+    setting(component).proportional_notation_duration = \
+        schemetools.SchemeMoment((1, 24))
+    setting(component).tuplet_full_length = True
+    lilypond_file = lilypondfiletools.LilyPondFile.new(component)
     lilypond_file.layout_block.indent = 0
     return lilypond_file
 

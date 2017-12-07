@@ -30,7 +30,7 @@ def show_demo():
         voice = Voice(selections)
         staff = Staff([voice], context_name='RhythmicStaff')
         score.append(staff)
-        divisions = sequencetools.rotate_sequence(divisions, 1)
+        divisions = datastructuretools.Sequence(divisions).rotate(1)
     lilypond_file = make_sketch_lilypond_file(score)
     show(lilypond_file)
 
@@ -128,7 +128,7 @@ for i in range(12):
     voice = Voice(selections)
     staff = Staff([voice], context_name='RhythmicStaff')
     score.append(staff)
-    divisions = sequencetools.rotate_sequence(divisions, 1)
+    divisions = datastructuretools.Sequence(divisions).rotate(1)
 
 sketch = make_sketch_lilypond_file(score)
 
